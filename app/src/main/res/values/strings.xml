@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">EISP BusTracker - Parents Edition</string>
+    <string name="bus_location_will_be_updated">Bus location will be automatically updated every 15 seconds</string>
+    <string name="latest_update">Latest update:</string>
+    <string name="back">Back</string>
+    <string name="username">Username:</string>
+    <string name="password">Password:</string>
+    <string name="save_username_and_password">Save username and password</string>
+    <string name="student_name">Student Name</string>
+    <string name="next_ride_details">Next Ride Details:</string>
+    <string name="date">Date</string>
+    <string name="pick_up_time">Pick up Time:</string>
+    <string name="drop_off_time">Drop off Time:</string>
+    <string name="bus_assistant">Bus Assistant</string>
+    <string name="bus_stop_info">Bus Stop Info</string>
+    <string name="bus_info">Bus Info</string>
+    <string name="yor_bus_is_on_its_way">Your bus is currently on its way! Click here to show its location</string>
+    <string name="assistant_name">Assistant Name</string>
+    <string name="close">Close</string>
+    <string name="spz">Registration plate:</string>
+    <string name="no_children_attached">You have no children assigned to this Moodle account. If you think that this is a mistake, please contact EISP at reception@eisp.cz</string>
+    <string name="back_to_login">Back to Login Screen</string>
+    <string name="loading_details">Loading student details.</string>
+    <string name="please_wait">Please wait...</string>
+</resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="300px"
+        android:layout_height="300px"
+        android:id="@+id/imgAssistantPhoto"
+        android:src="@drawable/no_photo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/assistant_name"
+        android:id="@+id/lblAssistantName"
+         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="+420727457455"
+        android:id="@+id/lblAssistantContactPhone"
+        android:autoLink="phone"
+        android:linksClickable="true"
+        android:layout_marginTop="30dp"
+         />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+            style="@android:style/Holo.Light.ButtonBar"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/close"
+            android:id="@+id/btnAssisClose"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/bus_location_will_be_updated"
+        android:id="@+id/lblMessage"
+        android:gravity="center"
+        android:textIsSelectable="true"
+        android:textSize="15dp" />
+
+    <org.osmdroid.views.MapView android:id="@+id/mapBusLocation"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.95" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="@string/latest_update"
+        android:id="@+id/lblLastUpdate" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/back"
+        android:id="@+id/btnMapClose" />
+
+</LinearLayout>
