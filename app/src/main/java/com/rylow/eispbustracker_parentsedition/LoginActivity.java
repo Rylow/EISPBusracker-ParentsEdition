@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.CheckBox;
@@ -13,8 +14,11 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.google.android.gms.gcm.GoogleCloudMessaging;
+import com.google.android.gms.iid.InstanceID;
 import com.rylow.eispbustracker_parentsedition.network.Connect;
 import com.rylow.eispbustracker_parentsedition.network.ConnecterAsyncTask;
+import com.rylow.eispbustracker_parentsedition.service.RideInfoIntentService;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,9 +34,19 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
 
     private String username, password;
+    public static Boolean serviceON = false;
+
+    private final Context mContext = this;
+    private final String SENDER_ID = "647473183411"; // Project Number at https://console.developers.google.com/project/...
+    private final String SHARD_PREF = "com.example.gcmclient_preferences";
+    private final String GCM_TOKEN = "gcmtoken";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        if (!serviceON)
+            startService(new Intent(this, RideInfoIntentService.class));
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -50,6 +64,20 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
         if (username.length() > 0)
             cboxSave.setChecked(true);
+
+        String token = settings.getString(GCM_TOKEN, "");
+        if (token.isEmpty()) {
+            try {
+                getGCMToken();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+
+
+
+
 
         final ImageView imageLogin = (ImageView) findViewById(R.id.imageViewLogin);
         imageLogin.setOnTouchListener(new View.OnTouchListener() {
@@ -127,7 +155,29 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
     }
 
-
-
-
+    private void getGCMToken() {
+        new AsyncTask<Void, Void, Void>() {
+            @Override
+            protected Void doInBackground(Void... params) {
+                try {
+                    InstanceID instanceID = InstanceID.getInstance(mContext);
+                    String token = instanceID.getToken(SENDER_ID, GoogleCloudMessaging.INSTANCE_ID_SCOPE, null);
+                    if (token != null && !token.isEmpty()) {
+                        SharedPreferences appPrefs = mContext.getSharedPreferences(SHARD_PREF, Context.MODE_PRIVATE);
+                        SharedPreferences.Editor prefsEditor = appPrefs.edit();
+                        prefsEditor.putString(GCM_TOKEN, token);
+                        prefsEditor.apply();
+                    }
+                    Log.i("GCM", token);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return null;
+            }
+        }.execute();
     }
+
+
+
+
+}

@@ -22,4 +22,6 @@
     <string name="back_to_login">Back to Login Screen</string>
     <string name="loading_details">Loading student details.</string>
     <string name="please_wait">Please wait...</string>
+    <string name="notification_message">s bus is on its way!</string>
+    <string name="notification_header">Your bus is on its way!</string>
 </resources>
