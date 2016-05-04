@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">EISP BusTracker - Версия для Родителей</string>
+    <string name="bus_location_will_be_updated">Место положение автобуса будет автоматически обновлено каждых 15 секунд</string>
+    <string name="latest_update">Последняя актуализация:</string>
+    <string name="back">Назад</string>
+    <string name="username">Логин:</string>
+    <string name="password">Пароль:</string>
+    <string name="save_username_and_password">Сохранить имя пользователя и пароль</string>
+    <string name="student_name">Имя студента</string>
+    <string name="next_ride_details">Ближайшая поездка:</string>
+    <string name="date">Дата</string>
+    <string name="pick_up_time">Время посадки:</string>
+    <string name="drop_off_time">Время прибытия:</string>
+    <string name="bus_assistant">Ассистент</string>
+    <string name="bus_stop_info">Остановка</string>
+    <string name="bus_info">Автобус</string>
+    <string name="yor_bus_is_on_its_way">Ваш автобус находится в пути! Нажмите сюда для перехода на карту</string>
+    <string name="assistant_name">Имя ассистента</string>
+    <string name="close">Закрыть</string>
+    <string name="spz">Номер автобуса:</string>
+    <string name="no_children_attached">Ваша учетная запись не содержит информации о студентах. В случае, если Вы считаете, что это ошибка, пожалуйста, свяжитесь с нами через reception@eisp.cz</string>
+    <string name="back_to_login">Вернуться на главную страницу</string>
+    <string name="loading_details">Загружается информация о студентах.</string>
+    <string name="please_wait">Пожалуйста, подождите...</string>
+    <string name="notification_message"></string>
+    <string name="notification_header">Ваш автобус находится в пути!</string>
+    <string name="error_no_network">Соединение с сервером не возможно. Возможно отсутствует соединение с интернетом. Пожалуйста, попробуйте снова через какое-то время.</string>
+    <string name="failure">Ошибка</string>
+    <string name="your_bus_stop_details">Ваша Остановка</string>
+    <string name="bus">Автобус</string>
+    <string name="no_rides_planned_for_today">В ближайшие 3 дня нет запланированных поездок</string>
+    <string name="login_failed">В доступе отказано. Возможно, вы неправильно задали пароль или отсутствует соединение с интернетом</string>
+</resources>

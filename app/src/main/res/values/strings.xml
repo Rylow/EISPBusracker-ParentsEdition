@@ -14,14 +14,20 @@
     <string name="bus_assistant">Bus Assistant</string>
     <string name="bus_stop_info">Bus Stop Info</string>
     <string name="bus_info">Bus Info</string>
-    <string name="yor_bus_is_on_its_way">Your bus is currently on its way! Click here to show its location</string>
+    <string name="yor_bus_is_on_its_way">Your bus is currently on its way! Click here to display its location</string>
     <string name="assistant_name">Assistant Name</string>
     <string name="close">Close</string>
     <string name="spz">Registration plate:</string>
-    <string name="no_children_attached">You have no children assigned to this Moodle account. If you think that this is a mistake, please contact EISP at reception@eisp.cz</string>
+    <string name="no_children_attached">You have no children assigned to this Family account. If this is an error, please contact us at reception@eisp.cz</string>
     <string name="back_to_login">Back to Login Screen</string>
     <string name="loading_details">Loading student details.</string>
     <string name="please_wait">Please wait...</string>
     <string name="notification_message">s bus is on its way!</string>
     <string name="notification_header">Your bus is on its way!</string>
+    <string name="error_no_network">Connection to the server is not available. Probably mobile connection is not available at this moment. Please check your mobile connection or try again later.</string>
+    <string name="failure">Failure</string>
+    <string name="your_bus_stop_details">Your Bus Stop Details</string>
+    <string name="bus">Bus</string>
+    <string name="no_rides_planned_for_today">No rides planned in the next 3 days</string>
+    <string name="login_failed">Login Failed. Either your password is incorrect or server is not available</string>
 </resources>

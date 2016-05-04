@@ -549,7 +549,7 @@ public class RideInfoActivity extends AppCompatActivity {
                 imgAssistant.setVisibility(View.INVISIBLE);
                 imgBusStop.setVisibility(View.INVISIBLE);
 
-                lblNextTime.setText("No Rides planned for today");
+                lblNextTime.setText(getString(R.string.no_rides_planned_for_today));
                 lblNextTime.setTextColor(Color.RED);
 
                 lblBoardTimeLabel.setVisibility(View.INVISIBLE);
@@ -585,7 +585,7 @@ public class RideInfoActivity extends AppCompatActivity {
 
                                 final Dialog dialog = new Dialog(RideInfoActivity.this);
                                 dialog.setContentView(R.layout.dialog_bus);
-                                dialog.setTitle("Bus");
+                                dialog.setTitle(getString(R.string.bus));
 
                                 ImageView imgBusPhoto = (ImageView) dialog.findViewById(R.id.imgBusDialogPhoto);
                                 imgBusPhoto.setImageBitmap(student.getBus().getPhotoBitmap());
@@ -624,7 +624,7 @@ public class RideInfoActivity extends AppCompatActivity {
 
                                 final Dialog dialog = new Dialog(RideInfoActivity.this);
                                 dialog.setContentView(R.layout.dialog_assistant_profile);
-                                dialog.setTitle("Bus Assistant");
+                                dialog.setTitle(getString(R.string.bus_assistant));
 
                                 ImageView imgAssisPhoto = (ImageView) dialog.findViewById(R.id.imgAssistantPhoto);
                                 imgAssisPhoto.setImageBitmap(student.getAssistant().getPhotoBitmap());
@@ -665,7 +665,7 @@ public class RideInfoActivity extends AppCompatActivity {
 
                                 final Dialog dialog = new Dialog(RideInfoActivity.this);
                                 dialog.setContentView(R.layout.dialog_busstop_details);
-                                dialog.setTitle("Your Bus Stop Details");
+                                dialog.setTitle(getString(R.string.your_bus_stop_details));
 
 
                                 TextView lblStopName = (TextView) dialog.findViewById(R.id.lblBusStopName);
@@ -723,7 +723,7 @@ public class RideInfoActivity extends AppCompatActivity {
                 });
 
 
-                lblNextTime.setText("Next Ride Details:");
+                lblNextTime.setText(getString(R.string.next_ride_details));
                 lblNextTime.setTextColor(Color.GRAY);
 
                 lblBoardTimeLabel.setVisibility(View.VISIBLE);
@@ -738,9 +738,9 @@ public class RideInfoActivity extends AppCompatActivity {
                 lblRideDate.setText(student.getRidedate());
 
                 if (student.getRidedirection().equals("To School"))
-                    lblBoardTimeLabel.setText("Pick up time:");
+                    lblBoardTimeLabel.setText(getString(R.string.pick_up_time));
                 else
-                    lblBoardTimeLabel.setText("Drop off time:");
+                    lblBoardTimeLabel.setText(getString(R.string.drop_off_time));
 
                 if (student.getRideinprogress())
                     btnShowMap.setVisibility(View.VISIBLE);
@@ -825,8 +825,8 @@ public class RideInfoActivity extends AppCompatActivity {
             @Override
             public void run() {
                 AlertDialog alertDialog = new AlertDialog.Builder(RideInfoActivity.this).create();
-                alertDialog.setTitle("Failure");
-                alertDialog.setMessage("Connection to the server is not available. Probably mobile connection is not available at this moment. Please again later.");
+                alertDialog.setTitle(getString(R.string.failure));
+                alertDialog.setMessage(getString(R.string.error_no_network));
                 alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "OK",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int which) {

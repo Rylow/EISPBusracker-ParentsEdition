@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EISP BusTracker - Edition Parentale</string>
+    <string name="bus_location_will_be_updated">L\'endroit où se trouve le bus sera mis à jour chaque 15 secondes</string>
+    <string name="latest_update">Dernière mise à jour:</string>
+    <string name="back">Retour</string>
+    <string name="username">Nom d’utilisateur:</string>
+    <string name="password">Mot de passe:</string>
+    <string name="save_username_and_password">Enregistrer le nom d’utilisateur et le mot de passe</string>
+    <string name="student_name">Nom de l\’élève</string>
+    <string name="next_ride_details">Details du prochain trajet:</string>
+    <string name="date">Date</string>
+    <string name="pick_up_time">Heure de ramassage:</string>
+    <string name="drop_off_time">Heure de dépose:</string>
+    <string name="bus_assistant">Nom de l\’auxiliaire de bus</string>
+    <string name="bus_stop_info">Informations sur l\’arrêt de bus</string>
+    <string name="bus_info">Informations sur le bus</string>
+    <string name="yor_bus_is_on_its_way">Votre bus est en chemin! Cliquer ici pour visualiser sa position</string>
+    <string name="assistant_name">Nom de l\’auxiliaire</string>
+    <string name="close">Fermer</string>
+    <string name="spz">Immatriculation du bus:</string>
+    <string name="no_children_attached">Aucun enfant n\’est rattaché à ce compte. En cas d’erreur, prière de nous contacter à reception@eisp.cz</string>
+    <string name="back_to_login">Retour à l\’écran de connexion</string>
+    <string name="loading_details">Chargement des informations sur l\’élève.</string>
+    <string name="please_wait">Attendez s\’il vous plaît...</string>
+    <string name="notification_message">Le bus de *** est en chemin</string>
+    <string name="notification_header">Votre bus est en chemin!</string>
+    <string name="error_no_network">La connection au serveur est indisponible. Il se peut que la connection mobile soit indisponible en ce moment.</string>
+    <string name="failure">Echec</string>
+    <string name="your_bus_stop_details">Informations sur votre arrêt de bus</string>
+    <string name="bus">Bus</string>
+    <string name="no_rides_planned_for_today">Aucun trajet n\’est prévu dans les trois prochains jours</string>
+    <string name="login_failed">Echec de la connection. Soit votre mot de passe est incorrect, soit le serveur est indisponible</string>
+
+
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">EISP BusTracker – Aplikácia pre rodičov</string>
+    <string name="bus_location_will_be_updated">Poloha autobusu bude automaticky aktualizovaná každých 15 sekúnd</string>
+    <string name="latest_update">Posledná aktualizácia:</string>
+    <string name="back">Spať</string>
+    <string name="username">Uživateľské meno:</string>
+    <string name="password">Heslo:</string>
+    <string name="save_username_and_password">Uložiť uživateľské meno a heslo</string>
+    <string name="student_name">Meno študenta</string>
+    <string name="next_ride_details">Detaily o ďalšej jazde:</string>
+    <string name="date">Datum</string>
+    <string name="pick_up_time">Čas vyzdvihnutia:</string>
+    <string name="drop_off_time">Čas príchodu:</string>
+    <string name="bus_assistant">Asistentka v autobuse</string>
+    <string name="bus_stop_info">Informácia o zastávke</string>
+    <string name="bus_info">Informácia o autobuse</string>
+    <string name="yor_bus_is_on_its_way">Váš autobus je momentálne na ceste! Kliknite sem pre zobrazenie polohy autobusu</string>
+    <string name="assistant_name">Meno asistentky</string>
+    <string name="close">Zavrieť</string>
+    <string name="spz">Poznávacia značka autobusu:</string>
+    <string name="no_children_attached">Nemáte dieťa pridelené k tomuto rodinnému účtu. Pokiaľ je to chyba, prosím kontaktujte nás na reception@eisp.cz</string>
+    <string name="back_to_login">Spať na prihlásenie</string>
+    <string name="loading_details">Načítavanie detailov študenta</string>
+    <string name="please_wait">Prosím čakajte...</string>
+    <string name="notification_message">Autobus je na ceste!</string>
+    <string name="notification_header">Váš autobus je na ceste!</string>
+    <string name="error_no_network">Pripojenie na server nie je k dispozícii. Pravdepodobne vypadlo mobilné spojenie. Prosím skontrolujte vase mobilné  pripojenie alebo skúste znova.</string>
+    <string name="failure">Chyba</string>
+    <string name="your_bus_stop_details">Detaily zastávky autobusu</string>
+    <string name="bus">Autobus</string>
+    <string name="no_rides_planned_for_today">Na následujúce tri dni nie sú naplánované žiadne jazdy</string>
+    <string name="login_failed">Prihlásenie zlyhalo. Buď máte neplatné heslo alebo nie je k dispozícii server.</string>
+
+
+</resources>

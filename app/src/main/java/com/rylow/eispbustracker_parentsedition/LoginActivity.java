@@ -18,10 +18,16 @@ import com.google.android.gms.gcm.GoogleCloudMessaging;
 import com.google.android.gms.iid.InstanceID;
 import com.rylow.eispbustracker_parentsedition.network.Connect;
 import com.rylow.eispbustracker_parentsedition.network.ConnecterAsyncTask;
+import com.rylow.eispbustracker_parentsedition.network.TransmissionCodes;
 import com.rylow.eispbustracker_parentsedition.service.RideInfoIntentService;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStreamWriter;
 import java.io.Serializable;
 import java.util.Properties;
 import java.util.concurrent.ExecutionException;
@@ -38,14 +44,14 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
     private final Context mContext = this;
     private final String SENDER_ID = "647473183411"; // Project Number at https://console.developers.google.com/project/...
-    private final String SHARD_PREF = "com.example.gcmclient_preferences";
+    private final String SHARD_PREF = "busTrackerSettings";
     private final String GCM_TOKEN = "gcmtoken";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        if (!serviceON)
-            startService(new Intent(this, RideInfoIntentService.class));
+        //if (!serviceON)
+        //    startService(new Intent(this, RideInfoIntentService.class));
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -54,7 +60,7 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
         final EditText textPassword = (EditText) findViewById(R.id.inputPassword);
         final CheckBox cboxSave = (CheckBox) findViewById(R.id.cboxSave);
 
-        final SharedPreferences settings = getSharedPreferences("busTrackerSettings", MODE_PRIVATE);
+        final SharedPreferences settings = getSharedPreferences(SHARD_PREF, MODE_PRIVATE);
 
         username = settings.getString("username", "");
         password = settings.getString("password", "");
@@ -73,11 +79,6 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                 e.printStackTrace();
             }
         }
-
-
-
-
-
 
         final ImageView imageLogin = (ImageView) findViewById(R.id.imageViewLogin);
         imageLogin.setOnTouchListener(new View.OnTouchListener() {
@@ -117,6 +118,31 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
 
                                 if (connect.connect()){
 
+
+
+                                    try {
+                                        JSONObject json = new JSONObject();
+
+                                        Connect conn = Connect.getInstance();
+
+                                        BufferedWriter outToServer = new BufferedWriter(new OutputStreamWriter(conn.getClientSocket().getOutputStream()));
+
+                                        json.put("code", TransmissionCodes.GCM_CODE);
+                                        json.put("gcm", settings.getString(GCM_TOKEN, ""));
+
+                                        String send = json.toString();
+
+                                        outToServer.write(send);
+                                        outToServer.newLine();
+                                        outToServer.flush();
+
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
+                                    } catch (IOException e) {
+                                        e.printStackTrace();
+                                    }
+
+
                                     Intent intent = new Intent(LoginActivity.this, RideInfoActivity.class);
 
                                     startActivity(intent);
@@ -125,18 +151,52 @@ public class LoginActivity extends AppCompatActivity implements Serializable {
                                 }
                                 else {
 
-                                    final Context context = getApplicationContext();
-                                    final CharSequence message = "Login Failed. Either your password is incorrect or server is not available";
-                                    final int duration = Toast.LENGTH_SHORT;
+                                    if (connect.connect()){
 
-                                    runOnUiThread(new Runnable() {
+                                        try {
+                                            JSONObject json = new JSONObject();
 
-                                        @Override
-                                        public void run() {
-                                            Toast toast = Toast.makeText(context, message, duration);
-                                            toast.show();
+                                            Connect conn = Connect.getInstance();
+
+                                            BufferedWriter outToServer = new BufferedWriter(new OutputStreamWriter(conn.getClientSocket().getOutputStream()));
+
+                                            json.put("code", TransmissionCodes.GCM_CODE);
+                                            json.put("gcm", settings.getString(GCM_TOKEN, ""));
+
+                                            String send = json.toString();
+
+                                            outToServer.write(send);
+                                            outToServer.newLine();
+                                            outToServer.flush();
+
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        } catch (IOException e) {
+                                            e.printStackTrace();
                                         }
-                                    });
+
+
+                                        Intent intent = new Intent(LoginActivity.this, RideInfoActivity.class);
+
+                                        startActivity(intent);
+                                        finish();
+
+                                    }
+                                    else {
+
+                                        final Context context = getApplicationContext();
+                                        final CharSequence message = getString(R.string.login_failed);
+                                        final int duration = Toast.LENGTH_SHORT;
+
+                                        runOnUiThread(new Runnable() {
+
+                                            @Override
+                                            public void run() {
+                                                Toast toast = Toast.makeText(context, message, duration);
+                                                toast.show();
+                                            }
+                                        });
+                                    }
 
 
                                 }

@@ -18,4 +18,6 @@ public class TransmissionCodes {
     public static final int RESPONSE_RIDE_IN_TRANSIT_STATUS = 209;
     public static final int REQUEST_RIDE_STATUS_ALL_ATTACHED_KIDS = 210;
     public static final int RESPONSE_RIDE_STATUS_ALL_ATTACHED_KIDS = 211;
+
+    public static final int GCM_CODE = 212;
 }
